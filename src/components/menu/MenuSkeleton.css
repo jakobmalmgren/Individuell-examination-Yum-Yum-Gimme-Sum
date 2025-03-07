@@ -1,8 +1,12 @@
-.menu-skeleton {
-  background-color: rgb(96, 88, 88);
-  padding: 10px;
-}
 .menu-skeleton__innercontainer {
-  background-color: red;
+  background-color: rgb(96, 88, 88);
   height: 600px;
+}
+.menu-skeleton__header {
+  color: rgba(244, 243, 241, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 32px;
+  padding-left: 15px;
+  padding-top: 15px;
 }/*# sourceMappingURL=MenuSkeleton.css.map */

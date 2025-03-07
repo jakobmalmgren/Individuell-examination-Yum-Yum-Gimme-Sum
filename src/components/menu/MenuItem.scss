@@ -1,0 +1,23 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/mixins" as *;
+
+.menu-item {
+  background-color: $primary-background-color;
+  height: 40px;
+  padding: 15px;
+  &__name-price-wrapper {
+    @include justify-align-direction("", center, "");
+  }
+  &__item-name {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 22px;
+    color: $secondary-font-color;
+  }
+  &__item-ingredienses {
+    color: $secondary-font-color;
+    font-family: $primary-font-family;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}

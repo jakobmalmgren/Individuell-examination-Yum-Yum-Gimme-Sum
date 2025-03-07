@@ -1,1 +1,23 @@
-/*# sourceMappingURL=MenuItem.css.map */
+.menu-item {
+  background-color: rgb(96, 88, 88);
+  height: 40px;
+  padding: 15px;
+}
+.menu-item__name-price-wrapper {
+  display: flex;
+  justify-content: "";
+  align-items: center;
+  flex-direction: "";
+}
+.menu-item__item-name {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: rgba(244, 243, 241, 0.94);
+}
+.menu-item__item-ingredienses {
+  color: rgba(244, 243, 241, 0.94);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  font-size: 14px;
+}/*# sourceMappingURL=MenuItem.css.map */

@@ -1,4 +1,5 @@
 .menu-page {
   background-image: url("../images/background.png");
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0px 20px;
 }/*# sourceMappingURL=MenuPage.css.map */

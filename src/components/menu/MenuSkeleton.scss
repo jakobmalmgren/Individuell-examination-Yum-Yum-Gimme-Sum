@@ -1,12 +1,17 @@
 @use "../../assets/scss/variables" as *;
-// @use "../../assets/scss/mixins" as *;
 
 .menu-skeleton {
-  background-color: $primary-background-color;
-  //   width: 95%;
-  padding: 10px;
   &__innercontainer {
-    background-color: red;
+    background-color: $primary-background-color;
     height: 600px;
+  }
+  &__header {
+    color: $secondary-font-color;
+    font-family: $primary-font-family;
+    font-weight: 700;
+
+    font-size: 32px;
+    padding-left: 15px;
+    padding-top: 15px;
   }
 }

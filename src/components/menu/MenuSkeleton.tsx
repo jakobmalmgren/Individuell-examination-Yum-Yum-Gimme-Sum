@@ -1,10 +1,12 @@
+import MenuItem from "./MenuItem";
 import "./MenuSkeleton.scss";
 
 const MenuSkeleton = () => {
   return (
     <section className="menu-skeleton">
       <section className="menu-skeleton__innercontainer">
-        <h1>MENY</h1>
+        <h1 className="menu-skeleton__header">MENY</h1>
+        <MenuItem />
       </section>
     </section>
   );
