@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: "";
+  background-color: rgb(235, 87, 87);
+  padding: 0px 20px;
+  height: 15vh;
+}
+.navbar__burger-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0.5px solid black;
+}/*# sourceMappingURL=Navbar.css.map */

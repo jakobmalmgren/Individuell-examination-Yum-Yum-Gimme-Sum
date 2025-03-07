@@ -1,0 +1,8 @@
+@use "../assets/scss/variables" as *;
+.eta {
+  background-color: $secondary-background-color;
+  height: 100vh;
+}
+p {
+  color: $primary-font-color;
+}

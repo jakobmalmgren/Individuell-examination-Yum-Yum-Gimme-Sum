@@ -1,0 +1,29 @@
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgb(238, 238, 238);
+}
+.cart__amount {
+  background-color: rgb(235, 87, 87);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  border: 0.5px solid black;
+  color: rgba(244, 243, 241, 0.94);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+.cart__icon {
+  font-size: 40px;
+}/*# sourceMappingURL=Cart.css.map */

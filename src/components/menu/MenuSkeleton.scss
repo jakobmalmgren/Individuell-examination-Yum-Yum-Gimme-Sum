@@ -1,0 +1,12 @@
+@use "../../assets/scss/variables" as *;
+// @use "../../assets/scss/mixins" as *;
+
+.menu-skeleton {
+  background-color: $primary-background-color;
+  //   width: 95%;
+  padding: 10px;
+  &__innercontainer {
+    background-color: red;
+    height: 600px;
+  }
+}
