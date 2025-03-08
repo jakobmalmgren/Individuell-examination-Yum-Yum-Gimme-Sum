@@ -1,15 +1,27 @@
 @use "../assets/scss/variables" as *;
+@use "../assets/scss/mixins" as *;
 .eta {
   background-color: $primary-background-color;
   height: 100vh;
   padding: 20px;
   color: $secondary-font-color;
   font-family: $primary-font-family;
+  &__img-wrapper {
+    height: 40%;
+    width: 100%;
+    @include justify-align-direction(center, "", "");
+  }
   &__img {
     width: 100%;
   }
+  &__info-wrapper {
+    // background-color: green;
+    padding-bottom: 20px;
+    height: 30%;
+    @include justify-align-direction(space-around, "", column);
+  }
   &__header {
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
   }
   &__time-left {
@@ -21,7 +33,12 @@
     text-align: center;
   }
   &__inner-container {
-    background-color: red;
+    // background-color: red;
     height: 100%;
+  }
+  &__btn-wrapper {
+    // background-color: purple;
+    height: 20%;
+    @include justify-align-direction(space-between, "", column);
   }
 }

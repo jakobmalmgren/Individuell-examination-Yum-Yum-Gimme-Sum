@@ -1,9 +1,11 @@
 @use "../../assets/scss/variables" as *;
 .main-btn {
   width: 100%;
-  padding: 24px 0px;
+  padding: 22px 0px;
   color: $secondary-font-color;
   border: none;
   border-radius: 4px;
   font-family: $primary-font-family;
+  font-size: 20px;
+  cursor: pointer;
 }
