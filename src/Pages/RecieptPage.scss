@@ -1,0 +1,12 @@
+@use "../assets/scss/variables" as *;
+@use "../assets/scss/mixins" as *;
+
+.reciept-page {
+  background-color: $primary-background-color;
+  height: 100vh;
+  padding: 20px;
+  &__inner-container {
+    background-color: red;
+    height: 100%;
+  }
+}

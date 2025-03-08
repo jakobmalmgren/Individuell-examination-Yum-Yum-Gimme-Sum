@@ -1,0 +1,8 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/mixins" as *;
+
+.reciept-container {
+  background-color: $secondary-background-color;
+  height: 460px;
+  border-radius: 4px;
+}
