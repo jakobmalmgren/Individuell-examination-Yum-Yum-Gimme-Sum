@@ -1,3 +1,4 @@
+import DippSaucesBtn from "./DippSaucesBtn";
 import MenuItem from "./MenuItem";
 import "./MenuSkeleton.scss";
 
@@ -7,6 +8,17 @@ const MenuSkeleton = () => {
       <section className="menu-skeleton__innercontainer">
         <h1 className="menu-skeleton__header">MENY</h1>
         <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <MenuItem />
+        <DippSaucesBtn>bbq</DippSaucesBtn>
+        <DippSaucesBtn>chedder</DippSaucesBtn>
+        <DippSaucesBtn>lalal2</DippSaucesBtn>
+        <DippSaucesBtn>aaa2</DippSaucesBtn>
+        <DippSaucesBtn>bbq</DippSaucesBtn>
+        <DippSaucesBtn>bbq</DippSaucesBtn>
       </section>
     </section>
   );

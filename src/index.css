@@ -1,5 +1,9 @@
+/* 
+göra tilll scss o import use här sen behöver itnte använda i alla filer use sen?? */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
 }

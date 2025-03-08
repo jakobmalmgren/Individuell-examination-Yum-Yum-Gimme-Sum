@@ -1,1 +1,25 @@
-/*# sourceMappingURL=NavbarModalNavigation.css.map */
+.navbarModalNavigation {
+  background-color: rgb(53, 49, 49);
+  height: 100vh;
+}
+.navbarModalNavigation__navbarModalNavigation__ul {
+  background-color: white;
+}
+.navbarModalNavigation__ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.navbarModalNavigation__list-item {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+  height: 100px;
+}
+.navbarModalNavigation__link {
+  color: rgba(244, 243, 241, 0.94);
+  font-size: 40px;
+}/*# sourceMappingURL=NavbarModalNavigation.css.map */

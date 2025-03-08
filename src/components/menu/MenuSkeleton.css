@@ -1,6 +1,7 @@
 .menu-skeleton__innercontainer {
   background-color: rgb(96, 88, 88);
   height: 600px;
+  border-radius: 4px;
 }
 .menu-skeleton__header {
   color: rgba(244, 243, 241, 0.94);

@@ -1,1 +1,1 @@
-{"version":3,"sources":["MenuSkeleton.scss","../../assets/scss/_variables.scss","MenuSkeleton.css"],"names":[],"mappings":"AAGE;EACE,iCCHuB;EDIvB,aAAA;AEFJ;AFIE;EACE,gCCHmB;EDInB,4CCDkB;EDElB,gBAAA;EAEA,eAAA;EACA,kBAAA;EACA,iBAAA;AEHJ","file":"MenuSkeleton.css"}
+{"version":3,"sources":["MenuSkeleton.scss","../../assets/scss/_variables.scss","MenuSkeleton.css"],"names":[],"mappings":"AAGE;EACE,iCCHuB;EDIvB,aAAA;EACA,kBAAA;AEFJ;AFIE;EACE,gCCFmB;EDGnB,4CAAA;EACA,gBAAA;EAEA,eAAA;EACA,kBAAA;EACA,iBAAA;AEHJ","file":"MenuSkeleton.css"}

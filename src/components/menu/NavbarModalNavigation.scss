@@ -1,0 +1,25 @@
+@use "../../assets/scss/variables" as *;
+@use "../../assets/scss/mixins" as *;
+.navbarModalNavigation {
+  background-color: $third-background-color;
+  height: 100vh;
+
+  &__navbarModalNavigation__ul {
+    background-color: white;
+  }
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  &__list-item {
+    margin: 10px 0px;
+    @include justify-align-direction(center, center, "");
+    height: 100px;
+  }
+  &__link {
+    color: $secondary-font-color;
+    font-size: 40px;
+  }
+}

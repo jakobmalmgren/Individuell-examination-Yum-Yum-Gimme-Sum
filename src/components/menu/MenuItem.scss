@@ -3,21 +3,46 @@
 
 .menu-item {
   background-color: $primary-background-color;
-  height: 40px;
+  //   height: 40px;
+  // background-color: red;
   padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(241, 240, 236, 0.12);
+  }
+
   &__name-price-wrapper {
     @include justify-align-direction("", center, "");
+    color: $secondary-font-color;
   }
   &__item-name {
     font-family: $primary-font-family;
     font-weight: 700;
     font-size: 22px;
-    color: $secondary-font-color;
+    // color: $secondary-font-color;
   }
   &__item-ingredienses {
     color: $secondary-font-color;
     font-family: $primary-font-family;
     font-weight: 500;
     font-size: 14px;
+  }
+  &__btn {
+    cursor: pointer;
+    background-color: $third-background-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    @include justify-align-direction(center, center, "");
+    &:hover {
+      background-color: rgba(53, 49, 49, 0.311);
+    }
+  }
+  &__icon {
+    color: $secondary-font-color;
   }
 }

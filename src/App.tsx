@@ -1,10 +1,14 @@
 import "./App.css";
+import NavbarModalNavigation from "./components/menu/NavbarModalNavigation";
+import EtaScreen from "./Pages/EtaScreenPage";
 import MenuPage from "./Pages/MenuPage";
 
 function App() {
   return (
     <section>
-      <MenuPage />
+      {/* <MenuPage />
+      <NavbarModalNavigation /> */}
+      <EtaScreen />
     </section>
   );
 }
