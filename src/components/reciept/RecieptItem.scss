@@ -1,0 +1,25 @@
+@use "../../assets/scss/mixins" as *;
+@use "../../assets/scss/variables" as *;
+
+.reciept-item {
+  padding: 10px;
+  //   background-color: green;
+  &__wrapper {
+    @include justify-align-direction(space-between, center, "");
+  }
+  &__item-name {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  &__item-sek {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  &__item-amount {
+    font-family: $primary-font-family;
+    font-weight: 400;
+    font-size: 12px;
+  }
+}
