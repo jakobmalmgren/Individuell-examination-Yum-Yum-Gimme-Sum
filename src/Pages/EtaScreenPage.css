@@ -15,8 +15,6 @@
 }
 .eta__img {
   width: 100%;
-  -o-object-fit: none;
-     object-fit: none;
 }
 .eta__info-wrapper {
   padding-bottom: 20px;

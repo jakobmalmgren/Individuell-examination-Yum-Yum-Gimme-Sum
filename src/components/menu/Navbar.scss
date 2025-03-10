@@ -3,7 +3,7 @@
 .navbar {
   @include justify-align-direction(space-between, center, "");
 
-  height: 15vh;
+  // height: 15vh;
   &__burger-wrapper {
     z-index: 100;
     width: 50px;

@@ -13,12 +13,14 @@ const MenuSkeleton = () => {
         <MenuItem />
         <MenuItem />
         <MenuItem />
-        <DippSaucesBtn>bbq</DippSaucesBtn>
-        <DippSaucesBtn>chedder</DippSaucesBtn>
-        <DippSaucesBtn>lalal2</DippSaucesBtn>
-        <DippSaucesBtn>aaa2</DippSaucesBtn>
-        <DippSaucesBtn>bbq</DippSaucesBtn>
-        <DippSaucesBtn>bbq</DippSaucesBtn>
+        <section className="menu-skeleton__dipp-wrapper">
+          <DippSaucesBtn>bbq</DippSaucesBtn>
+          <DippSaucesBtn>chedder</DippSaucesBtn>
+          <DippSaucesBtn>lalal2</DippSaucesBtn>
+          <DippSaucesBtn>aaa2</DippSaucesBtn>
+          <DippSaucesBtn>bbq</DippSaucesBtn>
+          <DippSaucesBtn>bbq</DippSaucesBtn>
+        </section>
       </section>
     </section>
   );

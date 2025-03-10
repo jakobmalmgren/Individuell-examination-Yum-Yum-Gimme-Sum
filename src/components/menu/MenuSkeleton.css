@@ -2,6 +2,7 @@
   background-color: rgb(96, 88, 88);
   height: 600px;
   border-radius: 4px;
+  margin-top: 30px;
 }
 .menu-skeleton__header {
   color: rgba(244, 243, 241, 0.94);
@@ -10,4 +11,13 @@
   font-size: 32px;
   padding-left: 15px;
   padding-top: 15px;
+}
+.menu-skeleton__dipp-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: "";
+  flex-direction: "";
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 15px;
 }/*# sourceMappingURL=MenuSkeleton.css.map */

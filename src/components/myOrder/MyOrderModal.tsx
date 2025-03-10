@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../globalFolder/Button";
 import Cart from "../globalFolder/Cart";
-import MainIcon from "../globalFolder/MainIcon";
+// import MainIcon from "../globalFolder/MainIcon";
 import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
 
 const MyOrderModal = ({ handleCartModal }) => {
+  const navigate = useNavigate();
   return (
     <section className="myorder-modal">
       <section className="myorder-modal__inner-container">
@@ -24,7 +26,13 @@ const MyOrderModal = ({ handleCartModal }) => {
               <p className="myorder-modal__header">TOTAL</p>
               <p className="myorder-modal__sek">101 SEK</p>
             </section>
-            <Button border="none" color="rgba(53, 49, 49, 1)">
+            <Button
+              onclick={() => {
+                navigate("/Eta");
+              }}
+              border="none"
+              color="rgba(53, 49, 49, 1)"
+            >
               TAKE MY MONEY!
             </Button>
           </section>

@@ -1,10 +1,12 @@
 @use "../../assets/scss/variables" as *;
+@use "../../assets/scss/mixins" as *;
 
 .menu-skeleton {
   &__innercontainer {
     background-color: $primary-background-color;
     height: 600px;
     border-radius: 4px;
+    margin-top: 30px;
   }
   &__header {
     color: $secondary-font-color;
@@ -14,5 +16,11 @@
     font-size: 32px;
     padding-left: 15px;
     padding-top: 15px;
+  }
+  &__dipp-wrapper {
+    @include justify-align-direction(center, "", "");
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 15px;
   }
 }

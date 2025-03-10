@@ -21,6 +21,7 @@
 }
 .myorder-modal__total {
   height: 64px;
+  padding: 10px;
   border-radius: 4px;
   background-color: rgba(53, 49, 49, 0.24);
   display: flex;
