@@ -25,7 +25,6 @@ const RecieptContainer = () => {
         <RecieptItem />
         <RecieptItem />
         <RecieptItem />
-        <RecieptItem />
         <RecieptItem /> */}
       </section>
 

@@ -1,0 +1,20 @@
+@use "../../assets/scss/mixins" as *;
+@use "../../assets/scss/variables" as *;
+.myorder-item {
+  //   background-color: green;
+  height: 60px;
+  @include justify-align-direction(space-between, center, "");
+  &__name,
+  &__amount,
+  &__price {
+    font-family: $primary-font-family;
+  }
+  &__btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    border: 1px solid black;
+    @include justify-align-direction(center, center, "");
+  }
+}

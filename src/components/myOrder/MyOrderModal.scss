@@ -1,0 +1,46 @@
+@use "../../assets/scss/mixins" as *;
+@use "../../assets/scss/variables" as *;
+
+.myorder-modal {
+  background-color: $secondary-background-color;
+  height: 100vh;
+  padding: 20px;
+
+  &__inner-container {
+    height: 100%;
+  }
+  &__header-wrapper {
+    @include justify-align-direction(space-between, "", "");
+    height: 20%;
+    // background-color: pink;
+  }
+  &__total {
+    height: 64px;
+    border-radius: 4px;
+    background-color: rgba(53, 49, 49, 0.24);
+    @include justify-align-direction(space-between, center, "");
+  }
+  &__header {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  &__sek {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 32px;
+  }
+  &__lower-wrapper {
+    // background-color: green;
+    height: 30%;
+
+    @include justify-align-direction(end, "", column);
+  }
+  &__item-container {
+    height: 70%;
+  }
+  &__content-wrapper {
+    // background-color: purple;
+    height: 80%;
+  }
+}
