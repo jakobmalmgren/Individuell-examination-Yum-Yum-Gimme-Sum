@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../globalFolder/Button";
 import Cart from "../globalFolder/Cart";
-// import MainIcon from "../globalFolder/MainIcon";
 import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
 
@@ -11,7 +10,6 @@ const MyOrderModal = ({ handleCartModal }) => {
     <section className="myorder-modal">
       <section className="myorder-modal__inner-container">
         <section className="myorder-modal__header-wrapper">
-          {/* <MainIcon /> */}
           <Cart handleCartModal={handleCartModal} />
         </section>
         <section className="myorder-modal__content-wrapper">

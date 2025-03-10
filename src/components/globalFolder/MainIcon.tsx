@@ -7,6 +7,7 @@ const MainIcon = () => {
   return (
     <section className="main-icon">
       <img
+        className="main-icon__img"
         src={icon}
         alt=""
         onClick={() => {
