@@ -9,6 +9,7 @@
   font-family: "Times New Roman", Times, serif;
 }
 .myorder-item__btn {
+  cursor: pointer;
   height: 30px;
   width: 30px;
   border-radius: 50%;

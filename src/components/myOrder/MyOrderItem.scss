@@ -10,6 +10,7 @@
     font-family: $primary-font-family;
   }
   &__btn {
+    cursor: pointer;
     height: 30px;
     width: 30px;
     border-radius: 50%;
