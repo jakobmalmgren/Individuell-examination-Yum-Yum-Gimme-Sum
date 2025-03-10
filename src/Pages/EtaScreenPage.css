@@ -1,8 +1,50 @@
 .eta {
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(96, 88, 88);
   height: 100vh;
+  padding: 20px;
+  color: rgba(244, 243, 241, 0.94);
+  font-family: "Times New Roman", Times, serif;
 }
-
-p {
-  color: rgb(53, 49, 49);
+.eta__img-wrapper {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: "";
+  flex-direction: "";
+}
+.eta__img {
+  width: 100%;
+  -o-object-fit: none;
+     object-fit: none;
+}
+.eta__info-wrapper {
+  padding-bottom: 20px;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: "";
+  flex-direction: column;
+}
+.eta__header {
+  font-size: 28px;
+  text-align: center;
+}
+.eta__time-left {
+  font-size: 26px;
+  text-align: center;
+}
+.eta__id {
+  font-size: 15px;
+  text-align: center;
+}
+.eta__inner-container {
+  height: 100%;
+}
+.eta__btn-wrapper {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: "";
+  flex-direction: column;
 }/*# sourceMappingURL=EtaScreenPage.css.map */

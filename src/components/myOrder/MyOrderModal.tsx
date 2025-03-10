@@ -4,35 +4,19 @@ import MainIcon from "../globalFolder/MainIcon";
 import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
 
-const MyOrderModal = () => {
+const MyOrderModal = ({ handleCartModal }) => {
   return (
     <section className="myorder-modal">
       <section className="myorder-modal__inner-container">
         <section className="myorder-modal__header-wrapper">
-          <MainIcon />
-          <Cart />
+          {/* <MainIcon /> */}
+          <Cart handleCartModal={handleCartModal} />
         </section>
         <section className="myorder-modal__content-wrapper">
           <section className="myorder-modal__item-container">
             <MyOrderItem />
             <MyOrderItem />
             <MyOrderItem />
-            {/* <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem /> */}
           </section>
 
           <section className="myorder-modal__lower-wrapper">

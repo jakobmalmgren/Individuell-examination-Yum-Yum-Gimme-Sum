@@ -3,6 +3,12 @@
 .navbarModalNavigation {
   background-color: $third-background-color;
   height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
 
   &__navbarModalNavigation__ul {
     background-color: white;

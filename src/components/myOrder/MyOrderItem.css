@@ -1,1 +1,21 @@
-/*# sourceMappingURL=MyOrderItem.css.map */
+.myorder-item {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: "";
+}
+.myorder-item__name, .myorder-item__amount, .myorder-item__price {
+  font-family: "Times New Roman", Times, serif;
+}
+.myorder-item__btn {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}/*# sourceMappingURL=MyOrderItem.css.map */

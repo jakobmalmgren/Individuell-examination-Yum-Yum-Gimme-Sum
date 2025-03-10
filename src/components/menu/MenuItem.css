@@ -1,6 +1,5 @@
 .menu-item {
   background-color: rgb(96, 88, 88);
-  background-color: red;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -40,6 +39,9 @@
   align-items: center;
   flex-direction: "";
 }
-.menu-item__container-wrapper {
-  background-color: green;
+.menu-item__btn:hover {
+  background-color: rgba(53, 49, 49, 0.311);
+}
+.menu-item__icon {
+  color: rgba(244, 243, 241, 0.94);
 }/*# sourceMappingURL=MenuItem.css.map */

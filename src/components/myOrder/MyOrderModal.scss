@@ -5,12 +5,18 @@
   background-color: $secondary-background-color;
   height: 100vh;
   padding: 20px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+  z-index: 101;
 
   &__inner-container {
     height: 100%;
   }
   &__header-wrapper {
-    @include justify-align-direction(space-between, "", "");
+    @include justify-align-direction(end, "", "");
     height: 20%;
     // background-color: pink;
   }

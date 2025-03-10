@@ -1,1 +1,19 @@
-/*# sourceMappingURL=RecieptPage.css.map */
+.reciept-page {
+  background-color: rgb(96, 88, 88);
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+.reciept-page__inner-container {
+  height: 100%;
+  margin-bottom: 100px;
+}
+.reciept-page__btn-wrapper {
+  margin-top: 80px;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  padding: 0px 20px;
+}/*# sourceMappingURL=RecieptPage.css.map */

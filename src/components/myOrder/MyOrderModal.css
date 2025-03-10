@@ -1,0 +1,53 @@
+.myorder-modal {
+  background-color: rgb(238, 238, 238);
+  height: 100vh;
+  padding: 20px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: fixed;
+  z-index: 101;
+}
+.myorder-modal__inner-container {
+  height: 100%;
+}
+.myorder-modal__header-wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: "";
+  flex-direction: "";
+  height: 20%;
+}
+.myorder-modal__total {
+  height: 64px;
+  border-radius: 4px;
+  background-color: rgba(53, 49, 49, 0.24);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: "";
+}
+.myorder-modal__header {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+.myorder-modal__sek {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+.myorder-modal__lower-wrapper {
+  height: 30%;
+  display: flex;
+  justify-content: end;
+  align-items: "";
+  flex-direction: column;
+}
+.myorder-modal__item-container {
+  height: 70%;
+}
+.myorder-modal__content-wrapper {
+  height: 80%;
+}/*# sourceMappingURL=MyOrderModal.css.map */

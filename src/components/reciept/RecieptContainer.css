@@ -1,1 +1,51 @@
-/*# sourceMappingURL=RecieptContainer.css.map */
+.reciept-container {
+  margin-top: 55px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 4px;
+}
+.reciept-container__icon-wrapper {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+.reciept-container__kvitto {
+  margin-top: 7px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
+.reciept-container__order-nr {
+  margin-top: 5px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: rgb(96, 88, 88);
+  text-align: center;
+}
+.reciept-container__total-amount-info {
+  background-color: rgba(53, 49, 49, 0.24);
+  height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: "";
+  padding: 10px;
+}
+.reciept-container__reciept-container__total {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+.reciept-container__moms {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+.reciept-container__pris {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 24px;
+}/*# sourceMappingURL=RecieptContainer.css.map */
