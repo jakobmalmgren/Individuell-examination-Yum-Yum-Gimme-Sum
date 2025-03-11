@@ -1,6 +1,7 @@
 import "./MyOrderItem.scss";
 import { BsPlusLg } from "react-icons/bs";
 import { FiMinus } from "react-icons/fi";
+import { FaRegTrashCan } from "react-icons/fa6";
 const MyOrderItem = () => {
   return (
     <section className="myorder-item">
@@ -12,6 +13,9 @@ const MyOrderItem = () => {
       <button className="myorder-item__btn">
         <BsPlusLg className="myorder-item__icon" />
       </button>
+      <section className="myorder-item__trash">
+        <FaRegTrashCan />
+      </section>
       <p className="myorder-item__price"> 27 SEK</p>
     </section>
   );

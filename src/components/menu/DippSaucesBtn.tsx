@@ -1,7 +1,12 @@
 import "./DippSaucesBtn.scss";
+import { BsPlusLg } from "react-icons/bs";
 
-const DippSaucesBtn = ({ children }) => {
-  return <button className="dippSaucesBtn">{children}</button>;
+const DippSaucesBtn = ({ item }) => {
+  return (
+    <button className="dippSaucesBtn">
+      {item.name} <BsPlusLg />
+    </button>
+  );
 };
 
 export default DippSaucesBtn;

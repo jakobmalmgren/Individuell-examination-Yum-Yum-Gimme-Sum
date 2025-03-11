@@ -14,6 +14,7 @@ const RecieptPage = () => {
       </section>
       <section className="reciept-page__btn-wrapper">
         <Button
+          border="none"
           onclick={() => {
             navigate("/");
           }}

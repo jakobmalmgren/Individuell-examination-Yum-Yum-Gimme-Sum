@@ -17,10 +17,4 @@
     padding-left: 15px;
     padding-top: 15px;
   }
-  &__dipp-wrapper {
-    @include justify-align-direction(center, "", "");
-    gap: 10px;
-    flex-wrap: wrap;
-    padding: 15px;
-  }
 }

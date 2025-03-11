@@ -1,6 +1,9 @@
 @use "../../assets/scss/variables" as *;
 
 .dippSaucesBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   &:hover {
     cursor: pointer;
     background-color: $third-background-color;

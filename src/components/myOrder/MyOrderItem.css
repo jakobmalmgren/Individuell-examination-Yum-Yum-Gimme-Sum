@@ -24,4 +24,8 @@
 }
 .myorder-item__btn:hover {
   background-color: rgba(53, 49, 49, 0.311);
+}
+.myorder-item__trash {
+  cursor: pointer;
+  display: flex;
 }/*# sourceMappingURL=MyOrderItem.css.map */

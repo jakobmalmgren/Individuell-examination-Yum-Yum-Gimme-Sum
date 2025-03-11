@@ -24,4 +24,8 @@
     border: 1px solid black;
     @include justify-align-direction(center, center, "");
   }
+  &__trash {
+    cursor: pointer;
+    display: flex;
+  }
 }

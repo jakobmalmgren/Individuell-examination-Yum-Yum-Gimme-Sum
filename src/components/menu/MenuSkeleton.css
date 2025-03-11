@@ -11,13 +11,4 @@
   font-size: 32px;
   padding-left: 15px;
   padding-top: 15px;
-}
-.menu-skeleton__dipp-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: "";
-  flex-direction: "";
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 15px;
 }/*# sourceMappingURL=MenuSkeleton.css.map */
