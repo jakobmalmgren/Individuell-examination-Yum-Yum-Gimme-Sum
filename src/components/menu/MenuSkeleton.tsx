@@ -12,18 +12,13 @@ const MenuSkeleton = () => {
   const { items, key, status, error } = useSelector((state) => {
     return state.api;
   });
-  // const spinner = () => {
-  //   if (status === "loading") {
-  //     return <CircleLoader />;
-  //   }
-  // };
-
-  console.log("itemsaaaa,", items);
-  // console.log(Array.isArray(items));
 
   useEffect(() => {
     if (status === "idle" && key) {
       dispatch(fetchApiKey());
+      // setTimeout(() => {
+      //   dispatch(fetchMenu(key));
+      // }, 2000);
       dispatch(fetchMenu(key));
     }
   }, [dispatch, status, key]);
@@ -33,7 +28,20 @@ const MenuSkeleton = () => {
   });
 
   // sätta in staten me pending etc här...
+  // if (status === "loading") {
+  //   return <p>loading.....</p>;
+  // }
 
+  // if (status === "failed") {
+  //   return <p>failed.....</p>;
+  // }
+  // if (error) {
+  //   return <p>error....</p>;
+  // }
+
+  // else if{
+  //   return <p>bla bla!</p>
+  // }
   return (
     <section className="menu-skeleton">
       <section className="menu-skeleton__innercontainer">

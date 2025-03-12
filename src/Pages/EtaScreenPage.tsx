@@ -3,7 +3,15 @@ import "./EtaScreenPage.scss";
 import etaImage from "../images/boxtop 1.png";
 import Button from "../components/globalFolder/Button";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const EtaScreen = () => {
+  const { etaInfo } = useSelector((state) => {
+    return state.api;
+  });
+
+  console.log(etaInfo);
+
   const navigate = useNavigate();
   return (
     <section className="eta">

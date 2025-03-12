@@ -3,13 +3,42 @@ import Button from "../globalFolder/Button";
 import Cart from "../globalFolder/Cart";
 import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchTenant, submitOrder } from "../../redux/slices/apiSlice";
 
 const MyOrderModal = ({ handleCartModal }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const { items } = useSelector((state) => {
     return state.orderItem;
   });
+  console.log("hallååå", items);
+
+  const { key, tenant } = useSelector((state) => {
+    return state.api;
+  });
+
+  useEffect(() => {
+    console.log("key är tillgännlig", key);
+
+    if (key) {
+      dispatch(fetchTenant(key));
+    }
+  }, [key, dispatch]);
+
+  console.log("tenant!!!!", tenant);
+
+  // console.log("items i varukorgen", items);
+
+  // lägger till total för allt
+  const totalAmount = items.map((item) => {
+    return item.price * item.quantity;
+  });
+
+  const totalAmountAllItems = totalAmount.reduce((acc, curr) => acc + curr, 0);
+
   return (
     <section className="myorder-modal">
       <section className="myorder-modal__inner-container">
@@ -25,19 +54,17 @@ const MyOrderModal = ({ handleCartModal }) => {
                 </div>
               );
             })}
-            {/* <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem /> */}
           </section>
 
           <section className="myorder-modal__lower-wrapper">
             <section className="myorder-modal__total">
               <p className="myorder-modal__header">TOTAL</p>
-              <p className="myorder-modal__sek">101 SEK</p>
+              <p className="myorder-modal__sek">{totalAmountAllItems} SEK</p>
             </section>
             <Button
               onclick={() => {
                 navigate("/Eta");
+                dispatch(submitOrder({ key, tenant, items }));
               }}
               border="none"
               color="rgba(53, 49, 49, 1)"
