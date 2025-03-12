@@ -5,10 +5,9 @@
   background-color: $primary-background-color;
   //   height: 40px;
   // background-color: red;
+  @include justify-align-direction(space-between, center, "");
   padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
   // &:hover {
   //   cursor: pointer;
   //   background-color: rgba(241, 240, 236, 0.12);

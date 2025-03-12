@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: "";
   padding: 5px 17px;
   background-color: rgba(241, 240, 236, 0.12);
   border-radius: 4px;

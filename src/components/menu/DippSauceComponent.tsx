@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import "./DippSauceComponent.scss";
 import DippSaucesBtn from "./DippSaucesBtn";
+
 const DippSauceComponent = () => {
   const { items } = useSelector((state) => {
     return state.api;

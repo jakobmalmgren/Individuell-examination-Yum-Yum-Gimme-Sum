@@ -3,9 +3,13 @@ import Button from "../globalFolder/Button";
 import Cart from "../globalFolder/Cart";
 import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
+import { useSelector } from "react-redux";
 
 const MyOrderModal = ({ handleCartModal }) => {
   const navigate = useNavigate();
+  const { items } = useSelector((state) => {
+    return state.orderItem;
+  });
   return (
     <section className="myorder-modal">
       <section className="myorder-modal__inner-container">
@@ -14,9 +18,16 @@ const MyOrderModal = ({ handleCartModal }) => {
         </section>
         <section className="myorder-modal__content-wrapper">
           <section className="myorder-modal__item-container">
+            {items.map((item) => {
+              return (
+                <div key={item.id}>
+                  <MyOrderItem item={item} />
+                </div>
+              );
+            })}
+            {/* <MyOrderItem />
             <MyOrderItem />
-            <MyOrderItem />
-            <MyOrderItem />
+            <MyOrderItem /> */}
           </section>
 
           <section className="myorder-modal__lower-wrapper">

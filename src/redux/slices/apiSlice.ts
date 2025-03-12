@@ -30,7 +30,7 @@ export const fetchApiKey = createAsyncThunk("key/fetchKey", async () => {
     // console.log("Success:", result);
     return result;
   } catch (error) {
-    // console.error("Error:", error);
+    console.error("Error:", error);
   }
 });
 //////////////////
@@ -59,7 +59,7 @@ export const fetchTenant = createAsyncThunk("tenant/fetchTenant", async () => {
     // console.log("Success:", result);
     return result;
   } catch (error) {
-    // console.error("Error:", error);
+    console.error("Error:", error);
   }
 });
 //////////////

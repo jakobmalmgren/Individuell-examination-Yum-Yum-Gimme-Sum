@@ -2,21 +2,46 @@ import "./MyOrderItem.scss";
 import { BsPlusLg } from "react-icons/bs";
 import { FiMinus } from "react-icons/fi";
 import { FaRegTrashCan } from "react-icons/fa6";
-const MyOrderItem = () => {
+import {
+  removeItem,
+  incrementItem,
+  decrementItem,
+} from "../../redux/slices/orderItemSlice";
+import { useDispatch } from "react-redux";
+const MyOrderItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const totalForEachItem = item.price * item.quantity;
   return (
     <section className="myorder-item">
-      <p className="myorder-item__name">KARLSTAD..................</p>
-      <button className="myorder-item__btn">
+      <p className="myorder-item__name">
+        {item.name.toUpperCase()}..................
+      </p>
+      <button
+        className="myorder-item__btn"
+        onClick={() => {
+          dispatch(decrementItem(item));
+        }}
+      >
         <FiMinus className="myorder-item__icon" />
       </button>
-      <section className="myorder-item__amount"> 6</section>
-      <button className="myorder-item__btn">
+      <section className="myorder-item__amount"> {item.quantity}</section>
+      <button
+        className="myorder-item__btn"
+        onClick={() => {
+          dispatch(incrementItem(item));
+        }}
+      >
         <BsPlusLg className="myorder-item__icon" />
       </button>
-      <section className="myorder-item__trash">
+      <section
+        className="myorder-item__trash"
+        onClick={() => {
+          dispatch(removeItem(item.id));
+        }}
+      >
         <FaRegTrashCan />
       </section>
-      <p className="myorder-item__price"> 27 SEK</p>
+      <p className="myorder-item__price">{totalForEachItem}</p>
     </section>
   );
 };

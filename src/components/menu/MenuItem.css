@@ -1,9 +1,10 @@
 .menu-item {
   background-color: rgb(96, 88, 88);
-  padding: 15px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: "";
+  padding: 15px;
 }
 .menu-item__name-price-wrapper {
   display: flex;

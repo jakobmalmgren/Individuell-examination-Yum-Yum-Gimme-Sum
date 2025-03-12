@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import DippSaucesBtn from "./DippSaucesBtn";
 import MenuItem from "./MenuItem";
 import "./MenuSkeleton.scss";
 // import { CircleLoader } from "react-spinners";
@@ -32,6 +31,8 @@ const MenuSkeleton = () => {
   const filteredNoDip = items.filter((item) => {
     return item.type !== "dip";
   });
+
+  // sätta in staten me pending etc här...
 
   return (
     <section className="menu-skeleton">
