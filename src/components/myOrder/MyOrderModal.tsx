@@ -5,6 +5,7 @@ import MyOrderItem from "./MyOrderItem";
 import "./MyOrderModal.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { resetItems } from "../../redux/slices/orderItemSlice";
 import { fetchTenant, submitOrder } from "../../redux/slices/apiSlice";
 
 const MyOrderModal = ({ handleCartModal }) => {
@@ -14,7 +15,6 @@ const MyOrderModal = ({ handleCartModal }) => {
   const { items } = useSelector((state) => {
     return state.orderItem;
   });
-  console.log("hallååå", items);
 
   const { key, tenant } = useSelector((state) => {
     return state.api;
@@ -28,7 +28,7 @@ const MyOrderModal = ({ handleCartModal }) => {
     }
   }, [key, dispatch]);
 
-  console.log("tenant!!!!", tenant);
+  console.log("tenant!!!!", tenant); //undefined för den e redan skapad
 
   // console.log("items i varukorgen", items);
 
@@ -45,15 +45,22 @@ const MyOrderModal = ({ handleCartModal }) => {
         <section className="myorder-modal__header-wrapper">
           <Cart handleCartModal={handleCartModal} />
         </section>
+
         <section className="myorder-modal__content-wrapper">
           <section className="myorder-modal__item-container">
-            {items.map((item) => {
-              return (
-                <div key={item.id}>
-                  <MyOrderItem item={item} />
-                </div>
-              );
-            })}
+            {items.length <= 0 ? (
+              <div className="myorder-modal__inga-varor">
+                DU HAR INGA VAROR I VARUKORGEN
+              </div>
+            ) : (
+              items.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <MyOrderItem item={item} />
+                  </div>
+                );
+              })
+            )}
           </section>
 
           <section className="myorder-modal__lower-wrapper">
@@ -63,8 +70,9 @@ const MyOrderModal = ({ handleCartModal }) => {
             </section>
             <Button
               onclick={() => {
+                dispatch(submitOrder({ tenant, key, items }));
                 navigate("/Eta");
-                dispatch(submitOrder({ key, tenant, items }));
+                dispatch(resetItems());
               }}
               border="none"
               color="rgba(53, 49, 49, 1)"

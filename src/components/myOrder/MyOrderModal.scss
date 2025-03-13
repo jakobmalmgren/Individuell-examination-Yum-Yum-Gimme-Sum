@@ -40,11 +40,17 @@
   &__lower-wrapper {
     // background-color: green;
     height: 30%;
-
     @include justify-align-direction(end, "", column);
   }
   &__item-container {
     height: 70%;
+  }
+  &__inga-varor {
+    @include justify-align-direction(center, center, "");
+    text-align: center;
+    height: 100%;
+
+    font-size: 30px;
   }
   &__content-wrapper {
     // background-color: purple;

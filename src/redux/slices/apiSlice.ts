@@ -10,8 +10,12 @@ const initialState = {
   key: {},
   status: "idle",
   error: null,
-  tenant: null,
+  // tenant: null,
+  tenant: "hxt5",
+
   etaInfo: null,
+  reciept: null,
+  // eller array ?
 };
 
 /////////////hämta API key
@@ -57,8 +61,7 @@ export const fetchTenant = createAsyncThunk(
         },
 
         body: JSON.stringify({
-          // name: "jakob",
-          name: "jaaapfaaddfaape",
+          name: "jakobmaaaaaaaalmgren",
         }),
       });
 
@@ -67,7 +70,7 @@ export const fetchTenant = createAsyncThunk(
       }
 
       const result = await response.json();
-      console.log("Success tentant:", result.name);
+      console.log("Success tentantsssssssssssssssssssssss:", result.name);
       return result;
     } catch (error) {
       console.error("Error tenant:", error);
@@ -107,10 +110,16 @@ export const fetchMenu = createAsyncThunk("menu/fetchMenu", async (key) => {
 //////////////////
 
 //submit/////////////////////
+// ${BASE_URL}/${tenantName}/orders
 
 export const submitOrder = createAsyncThunk(
   "submit/postSubmit",
   async ({ tenant, key, items }) => {
+    console.log("items i submit", items);
+    console.log("keys i submit", key);
+    console.log("tenant i submit", tenant);
+    const itemsIds = items.map((item) => item.id);
+    // hxt5
     //här..??
     try {
       const response = await fetch(
@@ -124,8 +133,9 @@ export const submitOrder = createAsyncThunk(
           },
 
           body: JSON.stringify({
-            items: [9],
+            items: itemsIds,
           }),
+          // body: JSON.stringify(items),
         }
       );
 
@@ -141,6 +151,42 @@ export const submitOrder = createAsyncThunk(
     }
   }
 );
+
+// få reciept /////////////
+
+export const getReciept = createAsyncThunk(
+  "reciept/getReciept",
+  async (key, id) => {
+    console.log("idddddddddd", id);
+    console.log("keyyyyyyyyyyyyy", key);
+
+    try {
+      const response = await fetch(
+        api + `receipts/${id}`,
+        // api + `receipts/2llbhi4a`, fungerar..nåt fel me inskicket..
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "x-zocom": key.key,
+          },
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      console.log("Success Reciept :", result);
+      return result;
+    } catch (error) {
+      console.error("Error Reciept :", error);
+    }
+  }
+);
+
+////////////////////////////
 
 ////////////////////////////////
 
@@ -197,6 +243,18 @@ const apiSlice = createSlice({
         state.etaInfo = action.payload;
       })
       .addCase(submitOrder.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+    builder
+      .addCase(getReciept.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getReciept.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.reciept = action.payload;
+      })
+      .addCase(getReciept.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

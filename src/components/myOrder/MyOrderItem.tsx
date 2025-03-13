@@ -16,30 +16,32 @@ const MyOrderItem = ({ item }) => {
       <p className="myorder-item__name">
         {item.name.toUpperCase()}..................
       </p>
-      <button
-        className="myorder-item__btn"
-        onClick={() => {
-          dispatch(decrementItem(item));
-        }}
-      >
-        <FiMinus className="myorder-item__icon" />
-      </button>
-      <section className="myorder-item__amount"> {item.quantity}</section>
-      <button
-        className="myorder-item__btn"
-        onClick={() => {
-          dispatch(incrementItem(item));
-        }}
-      >
-        <BsPlusLg className="myorder-item__icon" />
-      </button>
-      <section
-        className="myorder-item__trash"
-        onClick={() => {
-          dispatch(removeItem(item.id));
-        }}
-      >
-        <FaRegTrashCan />
+      <section className="myorder-item__content-wrapper">
+        <button
+          className="myorder-item__btn"
+          onClick={() => {
+            dispatch(decrementItem(item));
+          }}
+        >
+          <FiMinus className="myorder-item__icon" />
+        </button>
+        <section className="myorder-item__amount"> {item.quantity}</section>
+        <button
+          className="myorder-item__btn"
+          onClick={() => {
+            dispatch(incrementItem(item));
+          }}
+        >
+          <BsPlusLg className="myorder-item__icon" />
+        </button>
+        <section
+          className="myorder-item__trash"
+          onClick={() => {
+            dispatch(removeItem(item.id));
+          }}
+        >
+          <FaRegTrashCan />
+        </section>
       </section>
       <p className="myorder-item__price">{totalForEachItem}</p>
     </section>

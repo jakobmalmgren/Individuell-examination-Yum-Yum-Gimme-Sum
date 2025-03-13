@@ -2,7 +2,7 @@
 @use "../../assets/scss/mixins" as *;
 
 .menu-item {
-  background-color: $primary-background-color;
+  // background-color: $primary-background-color;
   //   height: 40px;
   // background-color: red;
   @include justify-align-direction(space-between, center, "");

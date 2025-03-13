@@ -9,6 +9,13 @@
   &__price {
     font-family: $primary-font-family;
   }
+  &__content-wrapper {
+    // background-color: red;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+  }
   &__btn {
     color: white;
     background-color: $third-background-color;

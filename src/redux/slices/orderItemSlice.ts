@@ -7,6 +7,9 @@ const orderItemSlice = createSlice({
   initialState,
   //träna o kolla på!!!
   reducers: {
+    resetItems: (state) => {
+      state.items = []; // Nollställer items till en tom array
+    },
     addItem: (state, action) => {
       const checkIfExists = state.items.find((item) => {
         return action.payload.id === item.id;
@@ -50,6 +53,6 @@ const orderItemSlice = createSlice({
 // console.log(initialState.items); ex kan inte logga här ju?
 // de ja frågade om..
 
-export const { addItem, removeItem, incrementItem, decrementItem } =
+export const { resetItems, addItem, removeItem, incrementItem, decrementItem } =
   orderItemSlice.actions;
 export default orderItemSlice.reducer;
