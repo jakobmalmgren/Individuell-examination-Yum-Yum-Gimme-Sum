@@ -21,8 +21,6 @@ const MyOrderModal = ({ handleCartModal }) => {
   });
 
   useEffect(() => {
-    console.log("key är tillgännlig", key);
-
     if (key) {
       dispatch(fetchTenant(key));
     }

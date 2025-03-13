@@ -1,14 +1,14 @@
 import "./RecieptItem.scss";
-const RecieptItem = () => {
+const RecieptItem = ({ item }) => {
   return (
     <section className="reciept-item">
       <section className="reciept-item__wrapper">
         <h1 className="reciept-item__item-name">
-          KARLSTAD............................................
+          {item.name}...........................................
         </h1>
-        <p className="reciept-item__item-sek">27 SEK</p>
+        <p className="reciept-item__item-sek">{item.price}</p>
       </section>
-      <p className="reciept-item__item-amount">3 stycken</p>
+      <p className="reciept-item__item-amount">{item.quantity}</p>
     </section>
   );
 };

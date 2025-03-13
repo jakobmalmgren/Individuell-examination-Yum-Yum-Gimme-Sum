@@ -14,28 +14,12 @@ const EtaScreen = () => {
     return state.api;
   });
 
-  ///////
+  console.log("ETAAAA", etaInfo);
 
-  // const { items } = useSelector((state) => {
-  //   return state.orderItem;
-  // });
-
-  // const { key, tenant } = useSelector((state) => {
-  //   return state.api;
-  // });
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(submitOrder({ key, tenant, items }));
-  // }, []);
-  /////
-  //måste ja kalla på den här så aja har all info?
-  console.log("ETAAAA", etaInfo); // de finns...
-  // sättta när de inte ör klar eller inte finns alls...visa nåt...sen när klart,uppdatera UI
-
-  const dateStr = etaInfo.order.eta;
-  const date = new Date(dateStr);
-  const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
-  console.log(formattedDate);
+  // const dateStr = etaInfo.eta;
+  // const date = new Date(dateStr);
+  // const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
+  // console.log(formattedDate);
 
   return (
     <section className="eta">
@@ -47,8 +31,8 @@ const EtaScreen = () => {
         <section className="eta__info-wrapper">
           <h1 className="eta__header">DINA WONTONS TILLAGAS!</h1>
           {/* //här */}
-          <h2 className="eta__time-left">ETA {formattedDate} </h2>
-          <p className="eta__id"># {etaInfo.order.id} </p>
+          <h2 className="eta__time-left">ETA {etaInfo.eta} </h2>
+          <p className="eta__id"># {etaInfo.id} </p>
         </section>
         <section className="eta__btn-wrapper">
           <Button
@@ -63,7 +47,9 @@ const EtaScreen = () => {
           <Button
             onclick={() => {
               navigate("/Reciept");
-              dispatch(getReciept(key, etaInfo.order.id));
+
+              dispatch(getReciept({ key: key, id: etaInfo.id }));
+              // dispatch(getReciept(key, etaInfo.order.id));
             }}
             border="1px solid rgba(244, 243, 241, 0.94)"
             color="rgba(96, 88, 88, 1)"

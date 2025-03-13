@@ -5,7 +5,7 @@ const initialState = {
 const orderItemSlice = createSlice({
   name: "orderItem",
   initialState,
-  //träna o kolla på!!!
+
   reducers: {
     resetItems: (state) => {
       state.items = []; // Nollställer items till en tom array

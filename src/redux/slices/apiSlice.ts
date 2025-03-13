@@ -2,6 +2,7 @@
 // läsa var ok vad som ska finnas o var etc...
 // ex kolla mina fetc o träna!
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+// import { id } from "date-fns/locale";
 
 const api = "https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/";
 
@@ -10,11 +11,10 @@ const initialState = {
   key: {},
   status: "idle",
   error: null,
-  // tenant: null,
-  tenant: "hxt5",
+  tenant: "", // sträng ist för obj
+  etaInfo: {},
+  reciept: {},
 
-  etaInfo: null,
-  reciept: null,
   // eller array ?
 };
 
@@ -61,7 +61,7 @@ export const fetchTenant = createAsyncThunk(
         },
 
         body: JSON.stringify({
-          name: "jakobmaaaaaaaalmgren",
+          name: (Math.floor(Math.random() * 110000) + 1).toString(),
         }),
       });
 
@@ -70,8 +70,8 @@ export const fetchTenant = createAsyncThunk(
       }
 
       const result = await response.json();
-      console.log("Success tentantsssssssssssssssssssssss:", result.name);
-      return result;
+      console.log("Success tentantsssssssssssssssssssssss:", result);
+      return result.id; //
     } catch (error) {
       console.error("Error tenant:", error);
     }
@@ -119,11 +119,30 @@ export const submitOrder = createAsyncThunk(
     console.log("keys i submit", key);
     console.log("tenant i submit", tenant);
     const itemsIds = items.map((item) => item.id);
-    // hxt5
-    //här..??
+
+    // const newItems = items.map((item) => {
+    //   // Använd items om det är en array
+    //   return {
+    //     description: item.description,
+    //     id: item.id,
+    //     ingredients: item.ingredients,
+    //     name: item.name,
+    //     price: item.price,
+    //     quantity: item.quantity,
+    //     type: item.type,
+    //   };
+    // });
+
+    // const tenantId = tenant.id;
+
     try {
       const response = await fetch(
-        api + `${tenant}` + "/orders",
+        // api + tenant + "/orders",
+        `${api} ${tenant}/orders`,
+        //  api + tenant + "/orders",
+        // api + `${tenant}` + "/orders",
+
+        // inte tentant.id här?
 
         {
           method: "POST",
@@ -133,10 +152,17 @@ export const submitOrder = createAsyncThunk(
           },
 
           body: JSON.stringify({
+            // items: itemsData,
             items: itemsIds,
+            // items: items,
           }),
-          // body: JSON.stringify(items),
         }
+
+        // {
+        //   "items": [
+        //     1
+        //   ]
+        // }
       );
 
       if (!response.ok) {
@@ -144,7 +170,7 @@ export const submitOrder = createAsyncThunk(
       }
 
       const result = await response.json();
-      console.log("Success :", result);
+      console.log("Success posting!!!!!!!!! :", result);
       return result;
     } catch (error) {
       console.error("Error :", error);
@@ -156,14 +182,17 @@ export const submitOrder = createAsyncThunk(
 
 export const getReciept = createAsyncThunk(
   "reciept/getReciept",
-  async (key, id) => {
-    console.log("idddddddddd", id);
+  async ({ key, id }) => {
+    console.log("idddddddddd", id); // id.id?
     console.log("keyyyyyyyyyyyyy", key);
 
     try {
       const response = await fetch(
+        // fel här..
         api + `receipts/${id}`,
-        // api + `receipts/2llbhi4a`, fungerar..nåt fel me inskicket..
+
+        // `${api}receipts/${id.id}`,
+        // api + `receipts/9xsj805y`,
         {
           method: "GET",
           headers: {
@@ -226,8 +255,11 @@ const apiSlice = createSlice({
         state.status = "loading";
       })
       .addCase(fetchTenant.fulfilled, (state, action) => {
+        console.log("fullfilled");
+
         state.status = "succeeded";
         state.tenant = action.payload;
+
         // uppdatera tenant från skickat..
       })
       .addCase(fetchTenant.rejected, (state, action) => {
@@ -239,8 +271,11 @@ const apiSlice = createSlice({
         state.status = "loading";
       })
       .addCase(submitOrder.fulfilled, (state, action) => {
+        console.log("hej", action.payload.order);
+
         state.status = "succeeded";
-        state.etaInfo = action.payload;
+        state.etaInfo = action.payload.order;
+        // kolla upp
       })
       .addCase(submitOrder.rejected, (state, action) => {
         state.status = "failed";
