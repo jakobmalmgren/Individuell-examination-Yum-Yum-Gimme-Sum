@@ -188,7 +188,8 @@ const apiSlice = createSlice({
       })
       .addCase(fetchMenu.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload.items; // behöver va items där för de blir fel annats..kolla upp!!!!
+        state.items = action.payload.items;
+        // behöver va items där för de blir fel annats..kolla upp!!!!
         // kolla hur arrays el obj e uppbygga när de kmr så ja vet va ja ska lägga de uppdatterat state!!!
       })
       .addCase(fetchMenu.rejected, (state, action) => {

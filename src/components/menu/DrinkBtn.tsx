@@ -7,7 +7,7 @@ const DrinkBtn = ({ item }) => {
   const dispatch = useDispatch();
   return (
     <button
-      className="dippSaucesBtn"
+      className="drinkBtn"
       onClick={() => {
         dispatch(addItem(item));
         console.log(item);

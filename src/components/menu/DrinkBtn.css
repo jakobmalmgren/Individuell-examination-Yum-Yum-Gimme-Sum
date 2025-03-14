@@ -1,4 +1,4 @@
-.dippSaucesBtn {
+.drinkBtn {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -10,7 +10,7 @@
   color: rgba(244, 243, 241, 0.94);
   font-family: "Times New Roman", Times, serif;
 }
-.dippSaucesBtn:hover {
+.drinkBtn:hover {
   cursor: pointer;
   background-color: rgb(53, 49, 49);
 }/*# sourceMappingURL=DrinkBtn.css.map */

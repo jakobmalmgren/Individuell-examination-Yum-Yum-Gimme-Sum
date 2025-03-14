@@ -1,7 +1,7 @@
 @use "../../assets/scss/variables" as *;
 @use "../../assets/scss/mixins" as *;
 
-.dippSaucesBtn {
+.drinkBtn {
   @include justify-align-direction(space-evenly, center, "");
   &:hover {
     cursor: pointer;
