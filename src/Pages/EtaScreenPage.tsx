@@ -14,12 +14,21 @@ const EtaScreen = () => {
     return state.api;
   });
 
-  console.log("ETAAAA", etaInfo);
+  console.log(etaInfo.eta);
 
-  // const dateStr = etaInfo.eta;
-  // const date = new Date(dateStr);
-  // const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
-  // console.log(formattedDate);
+  const dateStr = etaInfo.eta;
+  const date = new Date(dateStr);
+  const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
+  console.log(formattedDate);
+
+  const handleClick = async () => {
+    const result = await dispatch(
+      getReciept({ key: key, id: etaInfo.id })
+    ).unwrap();
+    if (result) {
+      navigate("/Reciept");
+    }
+  };
 
   return (
     <section className="eta">
@@ -28,12 +37,22 @@ const EtaScreen = () => {
         <section className="eta__img-wrapper">
           <img className="eta__img" src={etaImage} alt="" />
         </section>
-        <section className="eta__info-wrapper">
-          <h1 className="eta__header">DINA WONTONS TILLAGAS!</h1>
-          {/* //här */}
-          <h2 className="eta__time-left">ETA {etaInfo.eta} </h2>
-          <p className="eta__id"># {etaInfo.id} </p>
-        </section>
+        {Object.keys(etaInfo).length === 0 ? (
+          <section className="eta__info-wrapper">
+            <h1 className="eta__header">DU HAR INGEN ORDER ÄN</h1>
+          </section>
+        ) : (
+          <section className="eta__info-wrapper">
+            <h1 className="eta__header">DINA WONTONS TILLAGAS!</h1>
+
+            <h2 className="eta__time-left">
+              ETA
+              {formattedDate}
+            </h2>
+            <p className="eta__id"># {etaInfo.id} </p>
+          </section>
+        )}
+
         <section className="eta__btn-wrapper">
           <Button
             onclick={() => {
@@ -45,12 +64,7 @@ const EtaScreen = () => {
             GÖR EN NY BESTÄLLNING
           </Button>
           <Button
-            onclick={() => {
-              navigate("/Reciept");
-
-              dispatch(getReciept({ key: key, id: etaInfo.id }));
-              // dispatch(getReciept(key, etaInfo.order.id));
-            }}
+            onclick={handleClick}
             border="1px solid rgba(244, 243, 241, 0.94)"
             color="rgba(96, 88, 88, 1)"
           >

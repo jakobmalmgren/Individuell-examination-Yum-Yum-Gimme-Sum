@@ -49,6 +49,15 @@
 .myorder-modal__item-container {
   height: 70%;
 }
+.myorder-modal__inga-varor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+  text-align: center;
+  height: 100%;
+  font-size: 30px;
+}
 .myorder-modal__content-wrapper {
   height: 80%;
 }/*# sourceMappingURL=MyOrderModal.css.map */

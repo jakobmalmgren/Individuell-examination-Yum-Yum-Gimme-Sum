@@ -1,8 +1,4 @@
-// svårt försttå schema etc, endpoints, body o
-// läsa var ok vad som ska finnas o var etc...
-// ex kolla mina fetc o träna!
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import { id } from "date-fns/locale";
 
 const api = "https://fdnzawlcf6.execute-api.eu-north-1.amazonaws.com/";
 
@@ -14,8 +10,6 @@ const initialState = {
   tenant: "", // sträng ist för obj
   etaInfo: {},
   reciept: {},
-
-  // eller array ?
 };
 
 /////////////hämta API key
@@ -27,8 +21,6 @@ export const fetchApiKey = createAsyncThunk("key/fetchKey", async () => {
       headers: {
         "Content-Type": "application/json",
       },
-      //behövs inte i dettta fallet..
-      // body: JSON.stringify(data), // Skickar data som JSON
     });
 
     if (!response.ok) {
@@ -49,9 +41,6 @@ export const fetchApiKey = createAsyncThunk("key/fetchKey", async () => {
 export const fetchTenant = createAsyncThunk(
   "tenant/fetchTenant",
   async (key) => {
-    console.log("key i ten", key.key);
-    // console.log("tennnnnn i ten", tenant);
-
     try {
       const response = await fetch(api + "tenants", {
         method: "POST",
@@ -70,7 +59,7 @@ export const fetchTenant = createAsyncThunk(
       }
 
       const result = await response.json();
-      console.log("Success tentantsssssssssssssssssssssss:", result);
+      console.log("Success tentant:", result);
       return result.id; //
     } catch (error) {
       console.error("Error tenant:", error);
@@ -88,11 +77,7 @@ export const fetchMenu = createAsyncThunk("menu/fetchMenu", async (key) => {
       headers: {
         "Content-Type": "application/json",
         "x-zocom": key,
-        //sätt in id här när ja fetchar där ja vill ha tentants sen!
-        //sen lägga ttill egna builders ill extrareducern nere!
       },
-      //behövs inte i dettta fallet..
-      // body: JSON.stringify(data), // Skickar data som JSON
     });
 
     if (!response.ok) {
@@ -110,67 +95,56 @@ export const fetchMenu = createAsyncThunk("menu/fetchMenu", async (key) => {
 //////////////////
 
 //submit/////////////////////
-// ${BASE_URL}/${tenantName}/orders
 
 export const submitOrder = createAsyncThunk(
   "submit/postSubmit",
   async ({ tenant, key, items }) => {
     console.log("items i submit", items);
-    console.log("keys i submit", key);
-    console.log("tenant i submit", tenant);
-    const itemsIds = items.map((item) => item.id);
 
-    // const newItems = items.map((item) => {
-    //   // Använd items om det är en array
+    const itemsIds = items.map((item) => item.id);
+    console.log(itemsIds);
+
+    const itemsq = items.map((item) => item.quantity);
+    console.log("qqq", itemsq);
+
+    // const payload = {
+    //   items: items.flatMap((item) => Array(item.quantity).fill(item.id)),
+    // };
+
+    // const ready = items.map((item) => {
     //   return {
-    //     description: item.description,
     //     id: item.id,
-    //     ingredients: item.ingredients,
     //     name: item.name,
+    //     description: item.description,
     //     price: item.price,
     //     quantity: item.quantity,
     //     type: item.type,
     //   };
     // });
 
-    // const tenantId = tenant.id;
-
     try {
-      const response = await fetch(
-        // api + tenant + "/orders",
-        `${api} ${tenant}/orders`,
-        //  api + tenant + "/orders",
-        // api + `${tenant}` + "/orders",
+      const response = await fetch(`${api} ${tenant}/orders`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-zocom": key.key,
+        },
 
-        // inte tentant.id här?
-
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-zocom": key.key,
-          },
-
-          body: JSON.stringify({
-            // items: itemsData,
-            items: itemsIds,
-            // items: items,
-          }),
-        }
-
-        // {
-        //   "items": [
-        //     1
-        //   ]
-        // }
-      );
+        body: JSON.stringify({
+          items: itemsIds,
+          // items: [ready],
+          // items: { items },
+          // items: items,??? skickar in fel....ska va hela obj
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
 
       const result = await response.json();
-      console.log("Success posting!!!!!!!!! :", result);
+      console.log("Success posting:", result);
+
       return result;
     } catch (error) {
       console.error("Error :", error);

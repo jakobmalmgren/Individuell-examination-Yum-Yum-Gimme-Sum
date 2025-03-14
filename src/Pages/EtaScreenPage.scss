@@ -12,7 +12,7 @@
     @include justify-align-direction(center, "", "");
   }
   &__img {
-    width: 100%;
+    // width: 100%;
   }
   &__info-wrapper {
     // background-color: green;
@@ -33,11 +33,9 @@
     text-align: center;
   }
   &__inner-container {
-    // background-color: red;
     height: 100%;
   }
   &__btn-wrapper {
-    // background-color: purple;
     height: 20%;
     @include justify-align-direction(space-between, "", column);
   }

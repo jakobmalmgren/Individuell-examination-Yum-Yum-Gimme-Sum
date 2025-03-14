@@ -26,14 +26,18 @@ const MyOrderModal = ({ handleCartModal }) => {
     }
   }, [key, dispatch]);
 
-  console.log("tenant!!!!", tenant); //undefined för den e redan skapad
-
-  // console.log("items i varukorgen", items);
-
   // lägger till total för allt
   const totalAmount = items.map((item) => {
     return item.price * item.quantity;
   });
+
+  const handleClick = async () => {
+    const result = await dispatch(submitOrder({ tenant, key, items })).unwrap();
+    if (result) {
+      navigate("/Eta");
+      // dispatch(resetItems());
+    }
+  };
 
   const totalAmountAllItems = totalAmount.reduce((acc, curr) => acc + curr, 0);
 
@@ -67,11 +71,7 @@ const MyOrderModal = ({ handleCartModal }) => {
               <p className="myorder-modal__sek">{totalAmountAllItems} SEK</p>
             </section>
             <Button
-              onclick={() => {
-                dispatch(submitOrder({ tenant, key, items }));
-                navigate("/Eta");
-                dispatch(resetItems());
-              }}
+              onclick={handleClick}
               border="none"
               color="rgba(53, 49, 49, 1)"
             >

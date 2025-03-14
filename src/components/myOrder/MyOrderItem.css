@@ -8,6 +8,12 @@
 .myorder-item__name, .myorder-item__amount, .myorder-item__price {
   font-family: "Times New Roman", Times, serif;
 }
+.myorder-item__content-wrapper {
+  display: flex;
+  width: 40%;
+  align-items: center;
+  justify-content: space-between;
+}
 .myorder-item__btn {
   color: white;
   background-color: rgb(53, 49, 49);

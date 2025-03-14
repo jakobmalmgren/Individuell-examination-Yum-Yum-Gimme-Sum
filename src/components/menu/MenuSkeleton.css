@@ -1,8 +1,14 @@
 .menu-skeleton__innercontainer {
   background-color: rgb(96, 88, 88);
-  height: 600px;
+  min-height: 600px;
   border-radius: 4px;
   margin-top: 30px;
+}
+.menu-skeleton__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .menu-skeleton__header {
   color: rgba(244, 243, 241, 0.94);

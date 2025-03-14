@@ -1,5 +1,7 @@
 import "./RecieptItem.scss";
 const RecieptItem = ({ item }) => {
+  console.log("item i reciept", item);
+
   return (
     <section className="reciept-item">
       <section className="reciept-item__wrapper">

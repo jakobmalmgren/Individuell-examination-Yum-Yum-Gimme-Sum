@@ -7,9 +7,9 @@ const RecieptContainer = () => {
   const { reciept } = useSelector((state) => {
     return state.api;
   });
-  console.log(reciept.receipt);
+  console.log(reciept.receipt.id);
 
-  // const items = reciept.receipt.items;
+  const items = reciept.receipt.items;
 
   return (
     <section className="reciept-container">
@@ -18,17 +18,17 @@ const RecieptContainer = () => {
           <RecieptIcon />
         </section>
         <h1 className="reciept-container__kvitto">KVITTO</h1>
-        {/* <p className="reciept-container__order-nr">#{reciept.receipt.id}</p> */}
+        <p className="reciept-container__order-nr">#{reciept.receipt.id}</p>
       </section>
 
       <section className="reciept-container__middle-wrapper">
-        {/* {items.map((item) => {
+        {items.map((item) => {
           return (
             <div key={item.id}>
               <RecieptItem item={item} />
             </div>
           );
-        })} */}
+        })}
       </section>
 
       <section className="reciept-container__below-wrapper">
