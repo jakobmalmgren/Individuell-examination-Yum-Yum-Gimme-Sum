@@ -14,12 +14,9 @@ const EtaScreen = () => {
     return state.api;
   });
 
-  console.log(etaInfo.eta);
-
   const dateStr = etaInfo.eta;
   const date = new Date(dateStr);
   const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
-  console.log(formattedDate);
 
   const handleClick = async () => {
     const result = await dispatch(

@@ -99,28 +99,15 @@ export const fetchMenu = createAsyncThunk("menu/fetchMenu", async (key) => {
 export const submitOrder = createAsyncThunk(
   "submit/postSubmit",
   async ({ tenant, key, items }) => {
-    console.log("items i submit", items);
+    // const itemsIds = items.map((item) => item.id);
+    // console.log(itemsIds);
 
-    const itemsIds = items.map((item) => item.id);
-    console.log(itemsIds);
+    // const itemsq = items.map((item) => item.quantity);
+    // console.log("qqq", itemsq);
 
-    const itemsq = items.map((item) => item.quantity);
-    console.log("qqq", itemsq);
-
-    // const payload = {
-    //   items: items.flatMap((item) => Array(item.quantity).fill(item.id)),
-    // };
-
-    // const ready = items.map((item) => {
-    //   return {
-    //     id: item.id,
-    //     name: item.name,
-    //     description: item.description,
-    //     price: item.price,
-    //     quantity: item.quantity,
-    //     type: item.type,
-    //   };
-    // });
+    const payload = {
+      items: items.flatMap((item) => Array(item.quantity).fill(item.id)),
+    };
 
     try {
       const response = await fetch(`${api} ${tenant}/orders`, {
@@ -130,12 +117,8 @@ export const submitOrder = createAsyncThunk(
           "x-zocom": key.key,
         },
 
-        body: JSON.stringify({
-          items: itemsIds,
-          // items: [ready],
-          // items: { items },
-          // items: items,??? skickar in fel....ska va hela obj
-        }),
+        // kolla de..
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -157,16 +140,10 @@ export const submitOrder = createAsyncThunk(
 export const getReciept = createAsyncThunk(
   "reciept/getReciept",
   async ({ key, id }) => {
-    console.log("idddddddddd", id); // id.id?
-    console.log("keyyyyyyyyyyyyy", key);
-
     try {
       const response = await fetch(
-        // fel här..
         api + `receipts/${id}`,
 
-        // `${api}receipts/${id.id}`,
-        // api + `receipts/9xsj805y`,
         {
           method: "GET",
           headers: {

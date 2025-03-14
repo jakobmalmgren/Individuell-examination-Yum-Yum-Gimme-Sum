@@ -35,7 +35,7 @@ const MyOrderModal = ({ handleCartModal }) => {
     const result = await dispatch(submitOrder({ tenant, key, items })).unwrap();
     if (result) {
       navigate("/Eta");
-      // dispatch(resetItems());
+      dispatch(resetItems());
     }
   };
 

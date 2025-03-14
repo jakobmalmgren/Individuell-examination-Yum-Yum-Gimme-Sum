@@ -7,7 +7,14 @@ const RecieptContainer = () => {
   const { reciept } = useSelector((state) => {
     return state.api;
   });
-  console.log(reciept.receipt.id);
+
+  const sum = reciept.receipt.items.map((item) => {
+    return item.price;
+  });
+
+  const total = sum.reduce((acc, curr) => {
+    return acc + curr;
+  });
 
   const items = reciept.receipt.items;
 
@@ -38,7 +45,7 @@ const RecieptContainer = () => {
             <p className="reciept-container__moms">inkl 20% moms</p>
           </section>
 
-          <p className="reciept-container__pris">101 SEK</p>
+          <p className="reciept-container__pris"> {total}</p>
         </section>
       </section>
     </section>
