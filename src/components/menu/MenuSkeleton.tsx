@@ -21,19 +21,14 @@ const MenuSkeleton = () => {
     }
   }, [dispatch, status, key]);
 
-  console.log("itttttttttttms", items);
-
   const filteredNoDipAndDrinks = items.filter((item) => {
     return item.type !== "dip" && item.type !== "drink";
   });
 
-  console.log(Array.isArray(items));
   return (
     <section className="menu-skeleton">
       <section className="menu-skeleton__innercontainer">
-        {/* {status === "loading" ? "loading" : ""} */}
         {items.length === 0 ? (
-          // {status === "loading" ? (
           <div className="menu-skeleton__loading">
             <CircleLoader />
             <p>LOADING....</p>
@@ -52,18 +47,6 @@ const MenuSkeleton = () => {
             <DrinkComponent />
           </section>
         )}
-        {/* <section>
-          <h1 className="menu-skeleton__header">MENY</h1>
-
-          {filteredNoDipAndDrinks.map((item) => (
-            <div key={item.id}>
-              <MenuItem item={item} />
-            </div>
-          ))}
-
-          <DippSauceComponent />
-          <DrinkComponent />
-        </section> */}
       </section>
     </section>
   );

@@ -8,17 +8,18 @@ import { getReciept } from "../redux/slices/apiSlice";
 import { format } from "date-fns";
 
 const EtaScreen = () => {
-  // kan inte nå etaInfo när man trycker direkt så
-  //måste isåfall fixa de om man ska ha bra UI/UX
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { etaInfo, key } = useSelector((state) => {
     return state.api;
   });
+  let formattedDate;
 
-  const dateStr = etaInfo.eta;
-  const date = new Date(dateStr);
-  const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
+  if (etaInfo && etaInfo.eta && etaInfo.eta !== "") {
+    const dateStr = etaInfo.eta;
+    const date = new Date(dateStr);
+    formattedDate = format(date, "dd MMMM yyyy, HH:mm");
+  }
 
   // använder mig av en handlClick för vill använda unwrap också
   // vilket gör man kan fånga upp result i createasyncfunc

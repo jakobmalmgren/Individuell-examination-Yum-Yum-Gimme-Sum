@@ -48,4 +48,20 @@
   font-family: "Times New Roman", Times, serif;
   font-weight: 700;
   font-size: 24px;
+}
+.reciept-container__no-reciept {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.reciept-container__text {
+  color: white;
+  font-size: 30px;
+  text-align: center;
 }/*# sourceMappingURL=RecieptContainer.css.map */
