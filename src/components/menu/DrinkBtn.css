@@ -1,0 +1,16 @@
+.dippSaucesBtn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: "";
+  padding: 5px 17px;
+  background-color: rgba(241, 240, 236, 0.12);
+  border-radius: 4px;
+  border: none;
+  color: rgba(244, 243, 241, 0.94);
+  font-family: "Times New Roman", Times, serif;
+}
+.dippSaucesBtn:hover {
+  cursor: pointer;
+  background-color: rgb(53, 49, 49);
+}/*# sourceMappingURL=DrinkBtn.css.map */

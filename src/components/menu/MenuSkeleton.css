@@ -6,7 +6,11 @@
 }
 .menu-skeleton__loading {
   position: absolute;
-  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
 }

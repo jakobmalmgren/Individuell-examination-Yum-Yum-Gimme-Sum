@@ -5,6 +5,7 @@ import { CircleLoader } from "react-spinners";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchApiKey, fetchMenu } from "../../redux/slices/apiSlice";
 import DippSauceComponent from "./DippSauceComponent";
+import DrinkComponent from "./DrinkComponent";
 
 const MenuSkeleton = () => {
   const dispatch = useDispatch();
@@ -20,37 +21,49 @@ const MenuSkeleton = () => {
     }
   }, [dispatch, status, key]);
 
-  const filteredNoDip = items.filter((item) => {
-    return item.type !== "dip";
+  console.log("itttttttttttms", items);
+
+  const filteredNoDipAndDrinks = items.filter((item) => {
+    return item.type !== "dip" && item.type !== "drink";
   });
 
+  console.log(Array.isArray(items));
   return (
     <section className="menu-skeleton">
       <section className="menu-skeleton__innercontainer">
-        {status === "loading" && (
+        {/* {status === "loading" ? "loading" : ""} */}
+        {items.length === 0 ? (
+          // {status === "loading" ? (
           <div className="menu-skeleton__loading">
             <CircleLoader />
+            <p>LOADING....</p>
           </div>
-        )}
-        {status === "failed" && <div>Fel vid hämtning av menyn: {error}</div>}
-
-        {status === "succeeded" && (
-          <>
+        ) : (
+          <section>
             <h1 className="menu-skeleton__header">MENY</h1>
 
-            {filteredNoDip.length > 0 ? (
-              filteredNoDip.map((item) => (
-                <div key={item.id}>
-                  <MenuItem item={item} />
-                </div>
-              ))
-            ) : (
-              <div>Inga objekt tillgängliga för visning just nu.</div>
-            )}
+            {filteredNoDipAndDrinks.map((item) => (
+              <div key={item.id}>
+                <MenuItem item={item} />
+              </div>
+            ))}
 
             <DippSauceComponent />
-          </>
+            <DrinkComponent />
+          </section>
         )}
+        {/* <section>
+          <h1 className="menu-skeleton__header">MENY</h1>
+
+          {filteredNoDipAndDrinks.map((item) => (
+            <div key={item.id}>
+              <MenuItem item={item} />
+            </div>
+          ))}
+
+          <DippSauceComponent />
+          <DrinkComponent />
+        </section> */}
       </section>
     </section>
   );

@@ -1,0 +1,46 @@
+.drink {
+  background-color: rgb(96, 88, 88);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.drink__name-price-wrapper {
+  display: flex;
+  justify-content: "";
+  align-items: center;
+  flex-direction: "";
+  color: rgba(244, 243, 241, 0.94);
+}
+.drink__item-name {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: 22px;
+}
+.drink__btn {
+  cursor: pointer;
+  background-color: rgb(53, 49, 49);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: "";
+}
+.drink__btn:hover {
+  background-color: rgba(53, 49, 49, 0.311);
+}
+.drink__icon {
+  color: rgba(244, 243, 241, 0.94);
+}
+.drink__wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}/*# sourceMappingURL=DrinkComponent.css.map */

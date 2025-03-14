@@ -1,0 +1,46 @@
+@use "../../assets/scss/_mixins.scss" as *;
+@use "../../assets/scss/variables" as *;
+
+.drink {
+  background-color: $primary-background-color;
+
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__name-price-wrapper {
+    @include justify-align-direction("", center, "");
+    color: $secondary-font-color;
+  }
+  &__item-name {
+    font-family: $primary-font-family;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    background-color: $third-background-color;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    @include justify-align-direction(center, center, "");
+    &:hover {
+      background-color: rgba(53, 49, 49, 0.311);
+    }
+  }
+  &__icon {
+    color: $secondary-font-color;
+  }
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
