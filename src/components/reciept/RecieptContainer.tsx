@@ -4,6 +4,8 @@ import RecieptItem from "./RecieptItem";
 import { useSelector } from "react-redux";
 
 const RecieptContainer = () => {
+  // kan inte nå reciept när man trycker direkt så
+  //måste isåfall fixa de om man ska ha bra UI/UX
   const { reciept } = useSelector((state) => {
     return state.api;
   });

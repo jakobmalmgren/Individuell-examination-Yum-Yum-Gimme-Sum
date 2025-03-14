@@ -2,16 +2,8 @@
 @use "../../assets/scss/mixins" as *;
 
 .menu-item {
-  // background-color: $primary-background-color;
-  //   height: 40px;
-  // background-color: red;
   @include justify-align-direction(space-between, center, "");
   padding: 15px;
-
-  // &:hover {
-  //   cursor: pointer;
-  //   background-color: rgba(241, 240, 236, 0.12);
-  // }
 
   &__name-price-wrapper {
     @include justify-align-direction("", center, "");
@@ -21,7 +13,6 @@
     font-family: $primary-font-family;
     font-weight: 700;
     font-size: 22px;
-    // color: $secondary-font-color;
   }
   &__item-ingredienses {
     color: $secondary-font-color;

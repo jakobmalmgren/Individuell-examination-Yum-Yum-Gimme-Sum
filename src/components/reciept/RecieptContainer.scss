@@ -2,32 +2,13 @@
 @use "../../assets/scss/mixins" as *;
 
 .reciept-container {
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   max-width: 350px;
   margin-top: 55px;
   background-color: $secondary-background-color;
-
   border-radius: 4px;
-  &__top-wrapper {
-    // background-color: palegreen;
-    // height: 30%;
-  }
-  &__middle-wrapper {
-    // background-color: aqua;
-    // height: 40%;
-  }
-  &__below-wrapper {
-    // background-color: bisque;
-    // height: 30%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: end;
-  }
+
   &__icon-wrapper {
     padding-top: 40px;
     @include justify-align-direction(center, center, "");
-    // background-color: pink;
   }
   &__kvitto {
     margin-top: 7px;

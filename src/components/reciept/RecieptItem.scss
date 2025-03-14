@@ -3,7 +3,6 @@
 
 .reciept-item {
   padding: 10px;
-  //   background-color: green;
   &__wrapper {
     @include justify-align-direction(space-between, center, "");
   }

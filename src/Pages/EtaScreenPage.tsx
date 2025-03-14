@@ -8,6 +8,8 @@ import { getReciept } from "../redux/slices/apiSlice";
 import { format } from "date-fns";
 
 const EtaScreen = () => {
+  // kan inte nå etaInfo när man trycker direkt så
+  //måste isåfall fixa de om man ska ha bra UI/UX
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { etaInfo, key } = useSelector((state) => {
