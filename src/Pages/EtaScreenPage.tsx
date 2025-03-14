@@ -20,6 +20,9 @@ const EtaScreen = () => {
   const date = new Date(dateStr);
   const formattedDate = format(date, "dd MMMM yyyy, HH:mm");
 
+  // använder mig av en handlClick för vill använda unwrap också
+  // vilket gör man kan fånga upp result i createasyncfunc
+  // så ja kan navigera när result finns..
   const handleClick = async () => {
     const result = await dispatch(
       getReciept({ key: key, id: etaInfo.id })

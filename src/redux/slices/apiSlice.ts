@@ -7,7 +7,7 @@ const initialState = {
   key: {},
   status: "idle",
   error: null,
-  tenant: "", // sträng ist för obj
+  tenant: "",
   etaInfo: {},
   reciept: {},
 };
@@ -99,12 +99,6 @@ export const fetchMenu = createAsyncThunk("menu/fetchMenu", async (key) => {
 export const submitOrder = createAsyncThunk(
   "submit/postSubmit",
   async ({ tenant, key, items }) => {
-    // const itemsIds = items.map((item) => item.id);
-    // console.log(itemsIds);
-
-    // const itemsq = items.map((item) => item.quantity);
-    // console.log("qqq", itemsq);
-
     const payload = {
       items: items.flatMap((item) => Array(item.quantity).fill(item.id)),
     };

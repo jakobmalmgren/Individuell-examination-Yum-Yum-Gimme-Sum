@@ -33,7 +33,7 @@ const orderItemSlice = createSlice({
       }
     },
     decrementItem: (state, action) => {
-      //hita rätt item
+      //hitta rätt item
       const item = state.items.find((item) => item.id === action.payload.id);
 
       if (item) {
@@ -50,8 +50,6 @@ const orderItemSlice = createSlice({
     },
   },
 });
-// console.log(initialState.items); ex kan inte logga här ju?
-// de ja frågade om..
 
 export const { resetItems, addItem, removeItem, incrementItem, decrementItem } =
   orderItemSlice.actions;
